@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "2D339989-4248-4722-9396-51D7428A9D4E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "522C6A46-2122-4488-A5F5-FD4D97D71C25"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AzureOverall/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "522C6A46-2122-4488-A5F5-FD4D97D71C25 - 17d38b3d0adc4ef7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AzureOverall.AppDelegate.__allocating_init() -&gt; AzureOverall.AppDelegate"
+                  moduleName = "AzureOverall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pursuit/Desktop/AzureOverall/AzureOverall/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "522C6A46-2122-4488-A5F5-FD4D97D71C25 - 4794aea8c6a8eebf"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AzureOverall.AppDelegate.init() -&gt; AzureOverall.AppDelegate"
+                  moduleName = "AzureOverall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pursuit/Desktop/AzureOverall/AzureOverall/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  uuid = "522C6A46-2122-4488-A5F5-FD4D97D71C25 - a639117bd3842e39"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AzureOverall.AppDelegate.__deallocating_deinit"
+                  moduleName = "AzureOverall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pursuit/Desktop/AzureOverall/AzureOverall/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "522C6A46-2122-4488-A5F5-FD4D97D71C25 - df424a33a5ecf823"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "AzureOverall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pursuit/Desktop/AzureOverall/AzureOverall/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
