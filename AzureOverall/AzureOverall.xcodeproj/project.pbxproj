@@ -87,6 +87,7 @@
 		559A78A72430354A002B896F /* AzureOverall */ = {
 			isa = PBXGroup;
 			children = (
+				55FE4E93243257D4007462D3 /* Models */,
 				559A78CA24303CA2002B896F /* ScreenVCs */,
 				559A78A82430354A002B896F /* AppDelegate.swift */,
 				559A78AA2430354A002B896F /* SceneDelegate.swift */,
@@ -117,6 +118,13 @@
 				559A78CF24303D17002B896F /* DetailScreenVC.swift */,
 			);
 			path = ScreenVCs;
+			sourceTree = "<group>";
+		};
+		55FE4E93243257D4007462D3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

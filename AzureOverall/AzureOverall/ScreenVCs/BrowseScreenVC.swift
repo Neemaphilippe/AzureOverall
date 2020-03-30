@@ -30,8 +30,7 @@ class BrowseScreenVC: UIViewController {
 //        cv.delegate = self
         return cv
     }()
-    
-    
+        
     
     //MARK: PRIVATE FUNCTIONS
     private func addViews(){
@@ -72,7 +71,6 @@ class BrowseScreenVC: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.900858283, green: 0.900858283, blue: 0.900858283, alpha: 1)
     }
     
-
 
 }
 extension BrowseScreenVC: UISearchBarDelegate {
