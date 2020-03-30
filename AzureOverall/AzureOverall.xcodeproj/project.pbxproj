@@ -18,6 +18,7 @@
 		559A78CE24303CEF002B896F /* CartScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A78CD24303CEF002B896F /* CartScreenVC.swift */; };
 		559A78D024303D17002B896F /* DetailScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A78CF24303D17002B896F /* DetailScreenVC.swift */; };
 		559A78D224304D3A002B896F /* BrowseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A78D124304D3A002B896F /* BrowseCell.swift */; };
+		55FE4E9524326696007462D3 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE4E9424326696007462D3 /* CartCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		559A78CD24303CEF002B896F /* CartScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartScreenVC.swift; sourceTree = "<group>"; };
 		559A78CF24303D17002B896F /* DetailScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenVC.swift; sourceTree = "<group>"; };
 		559A78D124304D3A002B896F /* BrowseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCell.swift; sourceTree = "<group>"; };
+		55FE4E9424326696007462D3 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +116,9 @@
 			children = (
 				559A78CB24303CD3002B896F /* BrowseScreenVC.swift */,
 				559A78D124304D3A002B896F /* BrowseCell.swift */,
-				559A78CD24303CEF002B896F /* CartScreenVC.swift */,
 				559A78CF24303D17002B896F /* DetailScreenVC.swift */,
+				559A78CD24303CEF002B896F /* CartScreenVC.swift */,
+				55FE4E9424326696007462D3 /* CartCell.swift */,
 			);
 			path = ScreenVCs;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				559A78AD2430354A002B896F /* ViewController.swift in Sources */,
 				559A78CE24303CEF002B896F /* CartScreenVC.swift in Sources */,
 				559A78D224304D3A002B896F /* BrowseCell.swift in Sources */,
+				55FE4E9524326696007462D3 /* CartCell.swift in Sources */,
 				559A78A92430354A002B896F /* AppDelegate.swift in Sources */,
 				559A78CC24303CD3002B896F /* BrowseScreenVC.swift in Sources */,
 				559A78AB2430354A002B896F /* SceneDelegate.swift in Sources */,

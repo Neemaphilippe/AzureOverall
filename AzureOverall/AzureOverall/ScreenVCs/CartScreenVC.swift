@@ -10,6 +10,11 @@ import UIKit
 
 class CartScreenVC: UIViewController {
     
+    lazy var cartTableView: UITableView = {
+        let tv = UITableView()
+//        tv.register(CartCell.self, forCellWithReuseIdentifier: "cartCell")
+        return tv
+    }()
     
     
     
