@@ -55,10 +55,10 @@ class BrowseScreenVC: UIViewController {
     private func setUpCollectionView(){
         browseCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            browseCollectionView.topAnchor.constraint(equalTo: browseSearchBar.bottomAnchor, constant: 100),
+            browseCollectionView.topAnchor.constraint(equalTo: browseSearchBar.bottomAnchor, constant: 50),
             browseCollectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            browseCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
-        browseCollectionView.heightAnchor.constraint(equalToConstant: 300)
+            browseCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
+            browseCollectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
             
         ])
     }
