@@ -19,6 +19,11 @@
 		559A78D024303D17002B896F /* DetailScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A78CF24303D17002B896F /* DetailScreenVC.swift */; };
 		559A78D224304D3A002B896F /* BrowseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A78D124304D3A002B896F /* BrowseCell.swift */; };
 		55FE4E9524326696007462D3 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE4E9424326696007462D3 /* CartCell.swift */; };
+		55FE4E9724328A80007462D3 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE4E9624328A80007462D3 /* RecipeModel.swift */; };
+		55FE4E9C24328C77007462D3 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE4E9B24328C77007462D3 /* AppError.swift */; };
+		55FE4E9E24328CBF007462D3 /* RecipeAPIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE4E9D24328CBF007462D3 /* RecipeAPIHelper.swift */; };
+		55FE4EA024328D0D007462D3 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE4E9F24328D0D007462D3 /* ImageHelper.swift */; };
+		55FE4EA224328DD4007462D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE4EA124328DD4007462D3 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,11 @@
 		559A78CF24303D17002B896F /* DetailScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenVC.swift; sourceTree = "<group>"; };
 		559A78D124304D3A002B896F /* BrowseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCell.swift; sourceTree = "<group>"; };
 		55FE4E9424326696007462D3 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		55FE4E9624328A80007462D3 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		55FE4E9B24328C77007462D3 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		55FE4E9D24328CBF007462D3 /* RecipeAPIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPIHelper.swift; sourceTree = "<group>"; };
+		55FE4E9F24328D0D007462D3 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		55FE4EA124328DD4007462D3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				559A78A72430354A002B896F /* AzureOverall */,
+				55FE4E9824328C0B007462D3 /* Network Helpers */,
 				559A78BE2430354D002B896F /* AzureOverallTests */,
 				559A78A62430354A002B896F /* Products */,
 			);
@@ -126,8 +137,20 @@
 		55FE4E93243257D4007462D3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				55FE4E9624328A80007462D3 /* RecipeModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		55FE4E9824328C0B007462D3 /* Network Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				55FE4EA124328DD4007462D3 /* NetworkManager.swift */,
+				55FE4E9B24328C77007462D3 /* AppError.swift */,
+				55FE4E9D24328CBF007462D3 /* RecipeAPIHelper.swift */,
+				55FE4E9F24328D0D007462D3 /* ImageHelper.swift */,
+			);
+			path = "Network Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,13 +255,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				559A78AD2430354A002B896F /* ViewController.swift in Sources */,
+				55FE4E9E24328CBF007462D3 /* RecipeAPIHelper.swift in Sources */,
 				559A78CE24303CEF002B896F /* CartScreenVC.swift in Sources */,
+				55FE4EA224328DD4007462D3 /* NetworkManager.swift in Sources */,
 				559A78D224304D3A002B896F /* BrowseCell.swift in Sources */,
 				55FE4E9524326696007462D3 /* CartCell.swift in Sources */,
 				559A78A92430354A002B896F /* AppDelegate.swift in Sources */,
 				559A78CC24303CD3002B896F /* BrowseScreenVC.swift in Sources */,
+				55FE4EA024328D0D007462D3 /* ImageHelper.swift in Sources */,
 				559A78AB2430354A002B896F /* SceneDelegate.swift in Sources */,
+				55FE4E9C24328C77007462D3 /* AppError.swift in Sources */,
 				559A78D024303D17002B896F /* DetailScreenVC.swift in Sources */,
+				55FE4E9724328A80007462D3 /* RecipeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
