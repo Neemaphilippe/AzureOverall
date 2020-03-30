@@ -9,7 +9,7 @@
 import UIKit
 
 class BrowseCell: UICollectionViewCell {
-  
+    
     //MARK: UI OBJECTS
     lazy var recipeImage: UIImageView = {
         let image = UIImageView()
@@ -19,7 +19,6 @@ class BrowseCell: UICollectionViewCell {
     lazy var servingsLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        
         return label
     }()
     
@@ -44,13 +43,11 @@ class BrowseCell: UICollectionViewCell {
         stackView.spacing = 15
         stackView.distribution = .fillEqually
         addSubview(stackView)
-        
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+    stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-        
+            stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
-    
-    
     
 }
