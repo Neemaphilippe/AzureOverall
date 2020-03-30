@@ -14,8 +14,11 @@ class DetailScreenVC: UIViewController {
     
     let detailRecipeTitle: UILabel = {
         let label = UILabel()
+        label.text = "Recipe Title"
         label.numberOfLines = 0
         label.font = UIFont(name: "Times New Roman", size: 25)
+        label.textAlignment = .center
+        label.textColor = .black
         return label
     }()
     
@@ -26,8 +29,11 @@ class DetailScreenVC: UIViewController {
     
     let itemCountLabel: UILabel = {
         let label = UILabel()
+        label.text = "Item Count"
         label.numberOfLines = 0
         label.font = UIFont(name: "Times New Roman", size: 15)
+        label.textAlignment = .center
+        label.textColor = .black
         return label
     }()
     
@@ -58,7 +64,8 @@ class DetailScreenVC: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50)
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150)
         
         ])
         
