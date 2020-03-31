@@ -116,6 +116,12 @@ extension BrowseScreenVC: UICollectionViewDelegate,UICollectionViewDataSource, U
         cell.timePrepLabel.text = ("Prep time:\( currentRecipe.readyInMinutes)")
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = DetailScreenVC()
+        let selectedRecipe = recipes[indexPath.row]
+        detailVC.detailRecipe = selectedRecipe
+        
+    }
 
 }
 extension BrowseScreenVC: UISearchBarDelegate {

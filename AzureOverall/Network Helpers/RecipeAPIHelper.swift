@@ -15,7 +15,7 @@ struct RecipeApiHelper {
     
     func getRecipe(recipe: String, completionHandler: @escaping (Result<[RecipeResult], AppError>) -> () ) {
         
-        let urlStr = "https://api.spoonacular.com/recipes/search?apiKey=249c711f71d941458cde77e4419fbcde&number=6&query=apple"
+        let urlStr = "https://api.spoonacular.com/recipes/search?apiKey=\(APIKey.apiKey)&number=6&query=apple"
         
         guard let url = URL(string: urlStr) else {
             completionHandler(.failure(AppError.badURL))

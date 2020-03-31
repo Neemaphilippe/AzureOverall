@@ -10,6 +10,8 @@ import UIKit
 
 class DetailScreenVC: UIViewController {
 
+    var detailRecipe: RecipeResult!
+    
     //MARK: UI OBJECTS
     
     let detailRecipeTitle: UILabel = {
