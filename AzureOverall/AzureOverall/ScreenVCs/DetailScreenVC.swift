@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum BrowseOrCart{
+    case browse
+    case cart
+}
+
 class DetailScreenVC: UIViewController {
 
     var detailRecipe: RecipeResult!
@@ -42,7 +47,7 @@ class DetailScreenVC: UIViewController {
     let stepper: UIStepper = {
         let stepper = UIStepper()
         stepper.minimumValue = 0.0
-        stepper.maximumValue = 100
+        stepper.stepValue = 100
         stepper.tintColor = .darkGray
         return stepper
     }()

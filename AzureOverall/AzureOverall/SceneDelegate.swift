@@ -52,10 +52,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
     private func createTabBarController() -> UITabBarController {
-        let firstVC = BrowseScreenVC(),secondVC = DetailScreenVC(),thirdVC  = CartScreenVC()
+        let firstVC = BrowseScreenVC(),secondVC = CartScreenVC(),thirdVC  = DetailScreenVC()
         firstVC.tabBarItem = UITabBarItem(title: "Browse", image: UIImage(named: "search-icon"), tag: 0)
-        secondVC.tabBarItem = UITabBarItem(title: "Detail", image: UIImage(named: "create"), tag: 1)
-        thirdVC.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(named: "cart-icon"), tag: 2)
+        secondVC.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(named: "cart-icon"), tag: 1)
+        thirdVC.tabBarItem = UITabBarItem(title: "Detail", image: UIImage(named: "create"), tag: 2)
         let tabVC = UITabBarController()
         tabVC.setViewControllers([firstVC,secondVC,thirdVC], animated: false)
         return tabVC

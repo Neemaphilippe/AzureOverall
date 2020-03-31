@@ -26,6 +26,16 @@ class BrowseScreenVC: UIViewController {
     }
     
     //MARK: UI OBJECTS
+    lazy var pursuitFarmsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Welcome to Pursuit Farms!"
+        label.numberOfLines = 0
+        label.font = UIFont(name: "Times New Roman", size: 30)
+        label.textAlignment = .center
+        label.textColor = .black
+        return label
+    }()
+    
     lazy var browseSearchBar: UISearchBar = {
         let sb = UISearchBar()
         sb.placeholder = "Browse items here"
@@ -50,17 +60,28 @@ class BrowseScreenVC: UIViewController {
     //MARK: PRIVATE FUNCTIONS
     private func addViews(){
         view.addSubview(browseSearchBar)
+        view.addSubview(pursuitFarmsLabel)
         view.addSubview(browseCollectionView)
     }
     private func setUpViews(){
         setUpSearchBar()
+        setUpWelcomeLabel()
         setUpCollectionView()
+    }
+    
+    private func setUpWelcomeLabel(){
+        pursuitFarmsLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pursuitFarmsLabel.topAnchor.constraint(equalTo: browseSearchBar.bottomAnchor, constant: 40),
+            pursuitFarmsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+        ])
     }
     
     private func setUpSearchBar(){
         browseSearchBar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            browseSearchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            browseSearchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             browseSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             browseSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             browseSearchBar.heightAnchor.constraint(equalToConstant: 40)
@@ -70,7 +91,7 @@ class BrowseScreenVC: UIViewController {
     private func setUpCollectionView(){
         browseCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            browseCollectionView.topAnchor.constraint(equalTo: browseSearchBar.bottomAnchor, constant: 50),
+            browseCollectionView.topAnchor.constraint(equalTo: pursuitFarmsLabel.bottomAnchor, constant: 50),
             browseCollectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             browseCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
             browseCollectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
@@ -96,7 +117,7 @@ class BrowseScreenVC: UIViewController {
         addViews()
         setUpViews()
         loadData()
-        print(recipes.count)
+//        print(recipes.count)
         view.backgroundColor = #colorLiteral(red: 0.900858283, green: 0.900858283, blue: 0.900858283, alpha: 1)
     }
     
