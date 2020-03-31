@@ -10,6 +10,21 @@ import UIKit
 
 class BrowseScreenVC: UIViewController {
     
+    var recipes = [RecipeResult]()
+    {
+        didSet{
+            DispatchQueue.main.async {
+                self.browseCollectionView.reloadData()
+            }
+        }
+    }
+    
+    private var searchWord: String? {
+        didSet{
+            browseCollectionView.reloadData()
+        }
+    }
+    
     //MARK: UI OBJECTS
     lazy var browseSearchBar: UISearchBar = {
         let sb = UISearchBar()
@@ -26,8 +41,8 @@ class BrowseScreenVC: UIViewController {
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         cv.backgroundColor = .lightGray
         cv.register(BrowseCell.self, forCellWithReuseIdentifier: "browseCell")
-        //        cv.dataSource = self
-        //        cv.delegate = self
+        cv.dataSource = self
+        cv.delegate = self
         return cv
     }()
     
@@ -63,28 +78,49 @@ class BrowseScreenVC: UIViewController {
         ])
     }
     
+    private func loadData(){
+        RecipeApiHelper.manager.getRecipe(recipe: searchWord ?? "") { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let recipe):
+                    self.recipes = recipe
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
         setUpViews()
+        loadData()
+        print(recipes.count)
         view.backgroundColor = #colorLiteral(red: 0.900858283, green: 0.900858283, blue: 0.900858283, alpha: 1)
     }
     
     
 }
+
+extension BrowseScreenVC: UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return recipes.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "browseCell", for: indexPath) as? BrowseCell else {return UICollectionViewCell()}
+        let currentRecipe = recipes[indexPath.row]
+        cell.recipeTitle.text = currentRecipe.title
+        cell.servingsLabel.text = ("Servings:\(currentRecipe.servings)")
+        cell.timePrepLabel.text = ("Prep time:\( currentRecipe.readyInMinutes)")
+        return cell
+    }
+
+}
 extension BrowseScreenVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchWord = searchBar.text?.lowercased()
+        loadData()
     }
 }
-//extension BrowseScreenVC: UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        <#code#>
-//    }
-//
-//
-//}
