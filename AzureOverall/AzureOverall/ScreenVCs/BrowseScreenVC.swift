@@ -22,6 +22,7 @@ class BrowseScreenVC: UIViewController {
     private var searchWord: String? {
         didSet{
             browseCollectionView.reloadData()
+            loadData()
         }
     }
     
@@ -116,7 +117,7 @@ class BrowseScreenVC: UIViewController {
         super.viewDidLoad()
         addViews()
         setUpViews()
-        loadData()
+//        loadData()
 //        print(recipes.count)
         view.backgroundColor = #colorLiteral(red: 0.900858283, green: 0.900858283, blue: 0.900858283, alpha: 1)
     }
@@ -141,6 +142,7 @@ extension BrowseScreenVC: UICollectionViewDelegate,UICollectionViewDataSource, U
         let detailVC = DetailScreenVC()
         let selectedRecipe = recipes[indexPath.row]
         detailVC.detailRecipe = selectedRecipe
+        
         
     }
 

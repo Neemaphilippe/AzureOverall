@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum BrowseOrCart{
-    case browse
-    case cart
-}
-
 class DetailScreenVC: UIViewController {
 
     var detailRecipe: RecipeResult!
@@ -47,7 +42,9 @@ class DetailScreenVC: UIViewController {
     let stepper: UIStepper = {
         let stepper = UIStepper()
         stepper.minimumValue = 0.0
-        stepper.stepValue = 100
+        stepper.maximumValue = 10
+        stepper.stepValue = 1.0
+//        stepper.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
         stepper.tintColor = .darkGray
         return stepper
     }()
@@ -78,6 +75,10 @@ class DetailScreenVC: UIViewController {
         
     }
     
+    
+    @objc func increaseStepper(){
+        //label from cart.text = "\(Int(uiStepper.value)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         addDetailViews()
