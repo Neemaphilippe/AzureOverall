@@ -82,5 +82,69 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EC5607E7-B98E-4631-9919-92B900D13D5E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AzureOverall/ScreenVCs/BrowseScreenVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "loadData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EC5607E7-B98E-4631-9919-92B900D13D5E - 96274da794badac3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Result&lt;Swift.Array&lt;AzureOverall.RecipeResult&gt;, AzureOverall.AppError&gt;) -&gt; () in AzureOverall.BrowseScreenVC.(loadData in _6248AE95594C479BDF52815F798B0B4F)() -&gt; ()"
+                  moduleName = "AzureOverall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pursuit/Desktop/AzureOverall/AzureOverall/AzureOverall/ScreenVCs/BrowseScreenVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "EC5607E7-B98E-4631-9919-92B900D13D5E - 96274da794badac3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Result&lt;Swift.Array&lt;AzureOverall.RecipeResult&gt;, AzureOverall.AppError&gt;) -&gt; () in AzureOverall.BrowseScreenVC.(loadData in _6248AE95594C479BDF52815F798B0B4F)() -&gt; ()"
+                  moduleName = "AzureOverall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pursuit/Desktop/AzureOverall/AzureOverall/AzureOverall/ScreenVCs/BrowseScreenVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "172">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B34011E-1295-41A9-8EAE-E4E93EFCEC9C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AzureOverall/ScreenVCs/BrowseScreenVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "loadData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

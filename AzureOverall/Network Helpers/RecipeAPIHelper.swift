@@ -13,9 +13,9 @@ struct RecipeApiHelper {
     private init() {}
     static let manager = RecipeApiHelper()
     
-    func getRecipe(city: String, completionHandler: @escaping (Result<[Recipe], AppError>) -> () ) {
+    func getRecipe(recipe: String, completionHandler: @escaping (Result<[RecipeResult], AppError>) -> () ) {
         
-        let urlStr = "https://api.spoonacular.com/recipes/search?&apiKey=9ae5c317607b41b5a2af35a19f1402f1"
+        let urlStr = "https://api.spoonacular.com/recipes/search?apiKey=249c711f71d941458cde77e4419fbcde&number=6&query=apple"
         
         guard let url = URL(string: urlStr) else {
             completionHandler(.failure(AppError.badURL))
