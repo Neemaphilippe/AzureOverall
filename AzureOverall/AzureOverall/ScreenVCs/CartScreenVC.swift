@@ -21,7 +21,7 @@ class CartScreenVC: UIViewController {
         let tv = UITableView()
         tv.register(CartCell.self, forCellReuseIdentifier: "cartCell")
         tv.delegate = self
-        tv.dataSource = self 
+        tv.dataSource = self
         return tv
     }()
     
@@ -42,10 +42,14 @@ class CartScreenVC: UIViewController {
         
     }
     
+    private func getCart(){
+        recipeCart = try! CartPersistenceHelper.manager.getRecipe()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        getCart()
         view.backgroundColor = #colorLiteral(red: 0.900858283, green: 0.900858283, blue: 0.900858283, alpha: 1)
 
     }
