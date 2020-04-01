@@ -139,6 +139,17 @@ extension BrowseScreenVC: UICollectionViewDelegate,UICollectionViewDataSource, U
         cell.recipeTitle.text = currentRecipe.title
         cell.servingsLabel.text = ("Servings:\(currentRecipe.servings)")
         cell.timePrepLabel.text = ("Prep time:\( currentRecipe.readyInMinutes)")
+       
+        ImageManager.manager.getImage(urlStr: "https://spoonacular.com/recipeImages/\(currentRecipe.imageUrls![0])") { (result) in
+          DispatchQueue.main.async {
+            switch result{
+            case .failure(let error):
+              print(error)
+            case .success(let data):
+              cell.recipeImage.image = data
+            }
+          }
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

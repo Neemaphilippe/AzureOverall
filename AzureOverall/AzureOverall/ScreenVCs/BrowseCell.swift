@@ -13,12 +13,14 @@ class BrowseCell: UICollectionViewCell {
     //MARK: UI OBJECTS
     lazy var recipeTitle: UILabel = {
         let label = UILabel()
+        label.textColor = .black 
         label.textAlignment = .center
         return label
     }()
     
     lazy var recipeImage: UIImageView = {
         let image = UIImageView()
+        image.contentMode = .scaleToFill
         return image
     }()
     
@@ -36,8 +38,8 @@ class BrowseCell: UICollectionViewCell {
     override init(frame: CGRect) {
       super.init(frame: frame)
        addCellViews()
-      setUpCellViews()
-      setUpRecipeStackView()
+//        setUpRecipeTitle()
+        setUpRecipeImage()
     }
      
     required init?(coder: NSCoder) {
@@ -51,20 +53,26 @@ class BrowseCell: UICollectionViewCell {
         addSubview(servingsLabel)
         addSubview(timePrepLabel)
     }
-    private func setUpCellViews(){
-        setUpRecipeStackView()
+    
+    private func setUpRecipeImage(){
+        recipeImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            recipeImage.topAnchor.constraint(equalTo: recipeTitle.bottomAnchor, constant: 20),
+            recipeImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            recipeImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            recipeImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            
+        ])
+        
     }
     
-    private func setUpRecipeStackView(){
-        let stackView = UIStackView(arrangedSubviews: [recipeTitle, recipeImage,servingsLabel,timePrepLabel])
-        stackView.axis = .vertical
-        stackView.spacing = 15
-        stackView.distribution = .fillEqually
-        addSubview(stackView)
-    stackView.translatesAutoresizingMaskIntoConstraints = false
+    private func setUpRecipeTitle(){
+        recipeTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            recipeTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
+            recipeTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            recipeTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+        
         ])
     }
     
