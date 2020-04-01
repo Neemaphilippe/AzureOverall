@@ -111,11 +111,16 @@ class BrowseScreenVC: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+      loadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
         setUpViews()
-        loadData()
+        browseCollectionView.delegate = self
+        browseCollectionView.dataSource = self 
 //        print(recipes.count)
         view.backgroundColor = #colorLiteral(red: 0.900858283, green: 0.900858283, blue: 0.900858283, alpha: 1)
     }
