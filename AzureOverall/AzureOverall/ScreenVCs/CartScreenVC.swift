@@ -51,14 +51,30 @@ class CartScreenVC: UIViewController {
     
     
 }
-//extension CartScreenVC: UITableViewDelegate, UITableViewDataSource{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//
-//
-//}
+extension CartScreenVC: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recipeCart.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = cartTableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as? CartCell else {return UITableViewCell()}
+        let currentItem = recipeCart[indexPath.row]
+        cell.cartRecipeTitle.text = currentItem.title
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailScreenVC = DetailScreenVC()
+        detailScreenVC.detailRecipe = recipeCart[indexPath.row]
+    }
+
+
+}
