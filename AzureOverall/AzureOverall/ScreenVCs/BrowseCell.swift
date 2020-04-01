@@ -33,6 +33,17 @@ class BrowseCell: UICollectionViewCell {
         return label
     }()
     
+    override init(frame: CGRect) {
+      super.init(frame: frame)
+       addCellViews()
+      setUpCellViews()
+      setUpRecipeStackView()
+    }
+     
+    required init?(coder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: PRIVATE FUNCTIONS
     private func addCellViews(){
         addSubview(recipeTitle)
