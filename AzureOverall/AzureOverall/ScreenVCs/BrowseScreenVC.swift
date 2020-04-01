@@ -37,7 +37,7 @@ class BrowseScreenVC: UIViewController {
     
     lazy var browseSearchBar: UISearchBar = {
         let sb = UISearchBar()
-        sb.placeholder = "Browse items here"
+        sb.placeholder = "Browse recipes here"
         sb.delegate = self
         sb.isTranslucent = false
         sb.searchBarStyle = .minimal

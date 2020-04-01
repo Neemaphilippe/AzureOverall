@@ -13,6 +13,7 @@ class BrowseCell: UICollectionViewCell {
     //MARK: UI OBJECTS
     lazy var recipeTitle: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.textColor = .black 
         label.textAlignment = .center
         return label
@@ -57,7 +58,7 @@ class BrowseCell: UICollectionViewCell {
     private func setUpRecipeImage(){
         recipeImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            recipeImage.topAnchor.constraint(equalTo: recipeTitle.bottomAnchor, constant: 20),
+            recipeImage.topAnchor.constraint(equalTo: contentView.topAnchor),
             recipeImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             recipeImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             recipeImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
