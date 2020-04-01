@@ -49,9 +49,11 @@ class DetailScreenVC: UIViewController {
         return stepper
     }()
     
-//    let addToCartButton: UIButton = {
-//        
-//    }()
+    let addToCartButton: UIButton = {
+      let button = UIButton()
+        button.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
+        return button
+    }()
     
     
     //MARK: PRIVATE FUNCTIONS
@@ -60,10 +62,11 @@ class DetailScreenVC: UIViewController {
         view.addSubview(detailRecipeImage)
         view.addSubview(itemCountLabel)
         view.addSubview(stepper)
+        view.addSubview(addToCartButton)
     }
     
     private func setUpDetailStackView(){
-        let stackView = UIStackView(arrangedSubviews: [detailRecipeTitle, detailRecipeImage, itemCountLabel, stepper])
+        let stackView = UIStackView(arrangedSubviews: [detailRecipeTitle, detailRecipeImage, itemCountLabel, stepper, addToCartButton])
         stackView.axis = .vertical
         stackView.spacing = 1
         stackView.distribution = .fillEqually
@@ -83,6 +86,11 @@ class DetailScreenVC: UIViewController {
     @objc func increaseStepper(){
         itemCountLabel.text = "\(Int(stepper.value))"
     }
+    
+    @objc func addButtonPressed(){
+        try? CartPersistenceHelper.manager.saveRecipe(recipe: detailRecipe)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addDetailViews()

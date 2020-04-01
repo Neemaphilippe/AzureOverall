@@ -92,8 +92,8 @@
             filePath = "AzureOverall/ScreenVCs/BrowseScreenVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "loadData()"
             landmarkType = "7">
             <Locations>
@@ -140,8 +140,8 @@
             filePath = "AzureOverall/ScreenVCs/BrowseScreenVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>

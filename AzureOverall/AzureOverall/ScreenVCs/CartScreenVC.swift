@@ -10,6 +10,12 @@ import UIKit
 
 class CartScreenVC: UIViewController {
     
+    var recipeCart = [RecipeResult](){
+        didSet{
+            cartTableView.reloadData()
+        }
+    }
+    
     //MARK: UI OBJECTS
     lazy var cartTableView: UITableView = {
         let tv = UITableView()
