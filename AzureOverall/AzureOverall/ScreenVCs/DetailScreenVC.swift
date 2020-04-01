@@ -31,7 +31,7 @@ class DetailScreenVC: UIViewController {
     
     let itemCountLabel: UILabel = {
         let label = UILabel()
-        label.text = "Item Count"
+        label.text = "0"
         label.numberOfLines = 0
         label.font = UIFont(name: "Times New Roman", size: 15)
         label.textAlignment = .center
@@ -42,12 +42,16 @@ class DetailScreenVC: UIViewController {
     let stepper: UIStepper = {
         let stepper = UIStepper()
         stepper.minimumValue = 0.0
-        stepper.maximumValue = 10
         stepper.stepValue = 1.0
-//        stepper.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
+        stepper.maximumValue = 10
+        stepper.addTarget(self, action: #selector(increaseStepper), for: .touchUpInside)
         stepper.tintColor = .darkGray
         return stepper
     }()
+    
+//    let addToCartButton: UIButton = {
+//        
+//    }()
     
     
     //MARK: PRIVATE FUNCTIONS
@@ -61,7 +65,7 @@ class DetailScreenVC: UIViewController {
     private func setUpDetailStackView(){
         let stackView = UIStackView(arrangedSubviews: [detailRecipeTitle, detailRecipeImage, itemCountLabel, stepper])
         stackView.axis = .vertical
-        stackView.spacing = 15
+        stackView.spacing = 1
         stackView.distribution = .fillEqually
         view.addSubview(stackView)
         
@@ -77,7 +81,7 @@ class DetailScreenVC: UIViewController {
     
     
     @objc func increaseStepper(){
-        //label from cart.text = "\(Int(uiStepper.value)
+        itemCountLabel.text = "\(Int(stepper.value))"
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,5 +89,9 @@ class DetailScreenVC: UIViewController {
         setUpDetailStackView()
         view.backgroundColor = #colorLiteral(red: 0.900858283, green: 0.900858283, blue: 0.900858283, alpha: 1)
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        
+//    }
     
 }

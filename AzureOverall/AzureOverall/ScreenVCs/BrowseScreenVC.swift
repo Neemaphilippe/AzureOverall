@@ -10,19 +10,17 @@ import UIKit
 
 class BrowseScreenVC: UIViewController {
     
-    var recipes = [RecipeResult]()
-    {
+    private var searchWord: String? {
+        didSet{
+            browseCollectionView.reloadData()
+        }
+    }
+    
+    private var recipes = [RecipeResult]() {
         didSet{
             DispatchQueue.main.async {
                 self.browseCollectionView.reloadData()
             }
-        }
-    }
-    
-    private var searchWord: String? {
-        didSet{
-            browseCollectionView.reloadData()
-            loadData()
         }
     }
     
@@ -50,7 +48,7 @@ class BrowseScreenVC: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        cv.backgroundColor = .lightGray
+        cv.backgroundColor = .clear
         cv.register(BrowseCell.self, forCellWithReuseIdentifier: "browseCell")
         cv.dataSource = self
         cv.delegate = self
@@ -117,7 +115,7 @@ class BrowseScreenVC: UIViewController {
         super.viewDidLoad()
         addViews()
         setUpViews()
-//        loadData()
+        loadData()
 //        print(recipes.count)
         view.backgroundColor = #colorLiteral(red: 0.900858283, green: 0.900858283, blue: 0.900858283, alpha: 1)
     }
@@ -151,5 +149,6 @@ extension BrowseScreenVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.searchWord = searchBar.text?.lowercased()
         loadData()
+        searchBar.resignFirstResponder()
     }
 }
