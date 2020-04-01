@@ -20,6 +20,8 @@ class CartScreenVC: UIViewController {
     lazy var cartTableView: UITableView = {
         let tv = UITableView()
         tv.register(CartCell.self, forCellReuseIdentifier: "cartCell")
+        tv.delegate = self
+        tv.dataSource = self 
         return tv
     }()
     
