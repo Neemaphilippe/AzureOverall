@@ -30,6 +30,6 @@ struct RecipeResult: Codable {
     let id: Int?
     let title: String?
     let readyInMinutes, servings: Int?
-    let image: String?
+    let image: String? 
     let imageUrls: [String]?
 }

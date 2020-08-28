@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Kingfisher
+
 
 class BrowseScreenVC: UIViewController {
     
@@ -14,7 +16,7 @@ class BrowseScreenVC: UIViewController {
     
     private var searchWord: String? {
         didSet{
-            browseCollectionView.reloadData()
+            loadData()
         }
     }
     
@@ -29,7 +31,7 @@ class BrowseScreenVC: UIViewController {
     //MARK: UI OBJECTS
     lazy var pursuitFarmsLabel: UILabel = {
         let label = UILabel()
-        label.text = "Welcome to Pursuit Farms!"
+        label.text = "WELCOME TO PURSUIT FARMS!"
         label.numberOfLines = 0
         label.font = UIFont(name: "Times New Roman", size: 30)
         label.textAlignment = .center
@@ -47,7 +49,7 @@ class BrowseScreenVC: UIViewController {
     
     lazy var browseCollectionView: UICollectionView = {
         let cv: UICollectionView =  UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
-        cv.backgroundColor = .clear
+        cv.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
         cv.register(BrowseCell.self, forCellWithReuseIdentifier: "browseCell")
         cv.dataSource = self
         cv.delegate = self
@@ -72,9 +74,12 @@ class BrowseScreenVC: UIViewController {
     private func setUpWelcomeLabel(){
         pursuitFarmsLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            pursuitFarmsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            pursuitFarmsLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            pursuitFarmsLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
+            pursuitFarmsLabel.topAnchor.constraint(equalTo: browseSearchBar.bottomAnchor, constant: 50),
+            pursuitFarmsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            pursuitFarmsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+//            pursuitFarmsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            pursuitFarmsLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+//            pursuitFarmsLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
             
         ])
     }
@@ -94,7 +99,7 @@ class BrowseScreenVC: UIViewController {
     private func setUpCollectionView(){
         browseCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            browseCollectionView.topAnchor.constraint(equalTo: browseSearchBar.bottomAnchor),
+            browseCollectionView.topAnchor.constraint(equalTo: pursuitFarmsLabel.bottomAnchor, constant: 10),
             browseCollectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             browseCollectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             browseCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -115,16 +120,18 @@ class BrowseScreenVC: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-      loadData()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
         setUpViews()
-        view.backgroundColor = #colorLiteral(red: 0.900858283, green: 0.900858283, blue: 0.900858283, alpha: 1)
+        view.backgroundColor = .white
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+      loadData()
+    }
+    
+    
     
     
 }
@@ -135,22 +142,35 @@ extension BrowseScreenVC: UICollectionViewDelegate,UICollectionViewDataSource, U
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+       
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "browseCell", for: indexPath) as? BrowseCell else {return UICollectionViewCell()}
+        
         let currentRecipe = recipes[indexPath.row]
+        
         cell.recipeTitle.text = currentRecipe.title
         cell.servingsLabel.text = ("Servings:\(currentRecipe.servings)")
         cell.timePrepLabel.text = ("Prep time:\( currentRecipe.readyInMinutes)")
        
-        ImageManager.manager.getImage(urlStr: "https://spoonacular.com/recipeImages/\(currentRecipe.imageUrls?[0])") { (result) in
-          DispatchQueue.main.async {
-            switch result{
-            case .failure(let error):
-              print(error)
-            case .success(let data):
-              cell.recipeImage.image = data
-            }
-          }
+        cell.recipeImage.kf.indicatorType = .activity
+        
+        if let image = currentRecipe.image {
+            let imageURl = URL(string: image)
+            cell.recipeImage.kf.setImage(with: imageURl)
+        }else {
+            cell.recipeImage.image = UIImage(named: "noimage")
         }
+        
+        
+//        ImageManager.manager.getImage(urlStr: "https://spoonacular.com/recipeImages/\(currentRecipe.imageUrls?[0])") { (result) in
+//          DispatchQueue.main.async {
+//            switch result{
+//            case .failure(let error):
+//              print(error)
+//            case .success(let data):
+//              cell.recipeImage.image = data
+//            }
+//          }
+//        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
