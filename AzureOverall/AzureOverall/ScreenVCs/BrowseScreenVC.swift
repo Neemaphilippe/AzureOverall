@@ -14,7 +14,7 @@ class BrowseScreenVC: UIViewController {
     
     
     
-    private var searchWord: String? {
+    private var searchWord: String? = nil {
         didSet{
             loadData()
         }
@@ -157,6 +157,7 @@ extension BrowseScreenVC: UICollectionViewDelegate,UICollectionViewDataSource, U
         if let image = currentRecipe.image {
             let imageURl = URL(string: image)
             cell.recipeImage.kf.setImage(with: imageURl)
+            
         }else {
             cell.recipeImage.image = UIImage(named: "noimage")
         }
