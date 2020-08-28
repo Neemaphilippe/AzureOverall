@@ -44,6 +44,7 @@ class BrowseScreenVC: UIViewController {
         sb.delegate = self
         sb.searchBarStyle = .minimal
         sb.placeholder = "Browse recipes here"
+        sb.searchTextField.font = UIFont(name: "Times New Roman", size: 20)
         return sb
     }()
     
