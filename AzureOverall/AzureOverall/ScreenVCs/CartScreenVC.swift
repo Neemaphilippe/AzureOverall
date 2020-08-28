@@ -36,9 +36,10 @@ class CartScreenVC: UIViewController {
     private func constrainTableView(){
         cartTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            cartTableView.topAnchor.constraint(equalTo: view.topAnchor),
-            cartTableView.heightAnchor.constraint(equalTo: view.heightAnchor),
-            cartTableView.widthAnchor.constraint(equalTo: view.widthAnchor)
+             cartTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                       cartTableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+                       cartTableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+                       cartTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
     }

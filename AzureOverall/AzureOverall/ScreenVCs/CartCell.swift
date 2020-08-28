@@ -13,18 +13,26 @@ class CartCell: UITableViewCell {
     //MARK: UI OBJECTS
     lazy var cartRecipeTitle: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
     lazy var cartRecipeImage: UIImageView = {
         let image = UIImageView()
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        image.layer.cornerRadius = image.bounds.width / 2
+        image.layer.borderWidth = 3
         return image
     }()
     
     lazy var quantityLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
@@ -36,25 +44,48 @@ class CartCell: UITableViewCell {
         addSubview(quantityLabel)
     }
     private func setUpCellViews(){
-        setUpCartStackView()
+        setUpImage()
+        setUpRecipleTitle()
+        setUpQuantityLabel()
     }
     
-    private func setUpCartStackView(){
-        let stackView = UIStackView(arrangedSubviews: [cartRecipeTitle, cartRecipeImage, quantityLabel])
-        stackView.axis = .vertical
-        stackView.spacing = 15
-        stackView.distribution = .fillEqually
-        addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+    private func setUpImage(){
+       cartRecipeImage.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            cartRecipeImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
+            cartRecipeImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
+            cartRecipeImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
+            cartRecipeImage.widthAnchor.constraint(equalTo: cartRecipeImage.heightAnchor)
+        ])
+    }
+    
+    private func setUpRecipleTitle() {
+        cartRecipeTitle.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            cartRecipeTitle.leftAnchor.constraint(equalTo: cartRecipeImage.rightAnchor, constant: 15),
+            cartRecipeTitle.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -15),
+            cartRecipeTitle.bottomAnchor.constraint(equalTo: self.centerYAnchor, constant: -5)
+        ])
+    }
+    
+    private func setUpQuantityLabel() {
+        quantityLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            quantityLabel.topAnchor.constraint(equalTo: self.centerYAnchor, constant: 5),
+            quantityLabel.leadingAnchor.constraint(equalTo: cartRecipeTitle.leadingAnchor),
+            quantityLabel.rightAnchor.constraint(equalTo: cartRecipeTitle.rightAnchor)
         ])
     }
     
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+//        addCellViews()
+//        setUpCellViews()
         
     }
     
