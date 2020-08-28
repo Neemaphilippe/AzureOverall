@@ -49,7 +49,6 @@ class NetworkManager {
         }.resume()
     }
     
-    // MARK: - Private Properties and Initializers
     
     private let urlSession = URLSession(configuration: URLSessionConfiguration.default)
     
